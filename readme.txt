@@ -1,19 +1,21 @@
-ch3£º
-neuralnet_mnist.py£º¼ÆËãÊÖĞ´Êı×ÖÊ¶±ğµÄ¶ş²ãÉñ¾­ÍøÂçÄ£ĞÍµÄ¾«¶È
-neuralnet_mnist_batch.py£ºÍ¬ÉÏ£¬Ö»²»¹ı»ùÓÚÅú´¦Àí
-sample_weight.pkl£º±£´æÁËÈ¨ÖØ²ÎÊıºÍÆ«ÖÃµÄÎÄ¼ş
+è¯´æ˜ï¼š
 
-ch4£º
-4.3 numerical_diff.py£º¼ÆËãÊıÖµÎ¢·ÖµÄ³ÌĞò 
-4.4 gradient_2d.py:»æÖÆÌİ¶ÈµÄ³ÌĞò
-4.4 numerical_gradient.py£ºÇóÌİ¶ÈµÄ³ÌĞò
-4.4.2 gradient_simplenet.py£º¼ÆËãÉñ¾­ÍøÂçµÄÌİ¶ÈµÄ³ÌĞò
+ch3ï¼š
+neuralnet_mnist.pyï¼šè®¡ç®—æ‰‹å†™æ•°å­—è¯†åˆ«çš„äºŒå±‚ç¥ç»ç½‘ç»œæ¨¡å‹çš„ç²¾åº¦
+neuralnet_mnist_batch.pyï¼šåŒä¸Šï¼Œåªä¸è¿‡åŸºäºæ‰¹å¤„ç†
+sample_weight.pklï¼šä¿å­˜äº†æƒé‡å‚æ•°å’Œåç½®çš„æ–‡ä»¶
 
-4.5.1 two_layer_net.py£º´´½¨Ò»¸ö¶ş²ãÉñ¾­ÍøÂçµÄÀà
-4.5.2 train_neuralnet.py£º½øĞĞ¶ş²ãÍøÂçµÄÑ§Ï°/ÑµÁ·
+ch4ï¼š
+4.3 numerical_diff.pyï¼šè®¡ç®—æ•°å€¼å¾®åˆ†çš„ç¨‹åº 
+4.4 gradient_2d.py:ç»˜åˆ¶æ¢¯åº¦çš„ç¨‹åº
+4.4 numerical_gradient.pyï¼šæ±‚æ¢¯åº¦çš„ç¨‹åº
+4.4.2 gradient_simplenet.pyï¼šè®¡ç®—ç¥ç»ç½‘ç»œçš„æ¢¯åº¦çš„ç¨‹åº
 
-common£º
-functions.py gradient.py£º»ù±¾º¯ÊıÄ£¿é
+two_layer_net.pyï¼šåˆ›å»ºä¸€ä¸ªäºŒå±‚ç¥ç»ç½‘ç»œçš„ç±» 4.5.1 
+train_neuralnet.pyï¼šè¿›è¡ŒäºŒå±‚ç½‘ç»œçš„å­¦ä¹ /è®­ç»ƒ  4.5.2
 
-dataset£º
-Êı¾İ¼¯
+commonï¼š
+functions.py gradient.pyï¼šåŸºæœ¬å‡½æ•°æ¨¡å—
+
+datasetï¼š
+è®­ç»ƒå’Œæµ‹è¯•æ•°æ®é›†
