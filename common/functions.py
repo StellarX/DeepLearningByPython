@@ -38,6 +38,14 @@ def softmax(x):
     x = x - np.max(x) # 防止溢出
     return np.exp(x) / np.sum(np.exp(x))
 
+def softmax_0(x):
+    '''softmax_0: 原始版本'''
+    c = np.max(x)
+    exp_a = np.exp(a - c)
+    sum_exp_a = np.sum(exp_a)
+
+    return exp_a / sum_exp_a
+
 
 def mean_squared_error(y, t):
     return 0.5 * np.sum((y-t)**2)

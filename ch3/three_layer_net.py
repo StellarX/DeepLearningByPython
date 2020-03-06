@@ -1,4 +1,5 @@
 # coding: utf-8
+
 import sys, os
 sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
 from common.functions import sigmoid
@@ -16,7 +17,7 @@ def init_network():
 	return network
 
 def forward(network, x):
-	
+	'''前向传播'''
 	W1, W2, W3 = network['W1'], network['W2'], network['W3'] #从字典取出参数
 	b1, b2, b3 = network['b1'], network['b2'], network['b3']
 
