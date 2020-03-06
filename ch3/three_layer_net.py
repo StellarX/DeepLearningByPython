@@ -2,7 +2,7 @@
 
 import sys, os
 sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
-from common.functions import sigmoid
+from common.functions import sigmoid, identity_function
 import numpy as np
 
 def init_network():
@@ -26,8 +26,8 @@ def forward(network, x):
 	a2 = np.dot(z1, W2) + b2 #同上
 	z2 = sigmoid(a2) #同上
 	a3 = np.dot(z2, W3) + b3
-	#y = identity_function(a3) #这里使用恒等函数，只是为了和上面保持格式一致
-	y = a3
+	y = identity_function(a3) #这里使用恒等函数，只是为了和上面保持格式一致
+	
 	return y #返回网络的计算结果
 
 network = init_network() #初始化网络

@@ -39,7 +39,7 @@ def softmax(x):
     return np.exp(x) / np.sum(np.exp(x))
 
 def softmax_0(x):
-    '''softmax_0: 原始版本'''
+    '''输出层的激活函数: 原始版本'''
     c = np.max(x)
     exp_a = np.exp(a - c)
     sum_exp_a = np.sum(exp_a)
@@ -48,6 +48,7 @@ def softmax_0(x):
 
 
 def mean_squared_error(y, t):
+    '''均方误差(MSE)'''
     return 0.5 * np.sum((y-t)**2)
 
 #计算交叉熵误差   需要再理解一下程序
@@ -63,6 +64,10 @@ def cross_entropy_error(y, t):
     batch_size = y.shape[0]
     return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size
 
+def cross_entropy_error_0(y, t):
+    '''交叉熵误差：原始版本'''
+    delta = 1e-7 #防止y=0时log计算结果变成-inf
+    return -np.sum(t * np.log(y+delta))
 
 def softmax_loss(X, t):
     y = softmax(X)
