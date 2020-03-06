@@ -4,6 +4,7 @@
 - neuralnet_mnist_batch.py:同上，只不过基于批处理
 - sample_weight.pkl:保存了权重参数和偏置的文件
 - three_layer_net:三层神经网络的实现(不包括输出层的函数)(3.4)
+- showimg_from_mnist_dataset：从minit数据集读取第一个图片并显示
 
 ## ch4
 - numerical_diff.py:计算数值微分的程序(4.3)
