@@ -10,7 +10,6 @@ import pickle #保存了权重参数的文件
 from dataset.mnist import load_mnist #从该数据集中导入测试数据和正确解标签
 from common.functions import sigmoid, softmax #导入softmax等函数
 
-
 def get_data():
     '''获取数据集中的数据'''
     (x_train, t_train), (x_test, t_test) = \

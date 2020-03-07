@@ -7,6 +7,7 @@
 - sample_weight.pkl:以字典变量的形式保存了权重和偏置参数
 
 ## ch4
+- 
 - numerical_diff.py:计算数值微分的程序(4.3)
 - gradient_2d.py:绘制梯度的程序(4.4)
 - numerical_gradient.py:求梯度的程序(4.4)
