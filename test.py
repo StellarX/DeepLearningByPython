@@ -14,10 +14,12 @@ from common.functions import sigmoid, softmax #导入softmax等函数
 # import common.functions as f
 from dataset.mnist import load_mnist
 
+x = np.arange(0, 100, 10).reshape(2, 5)
+print(x.size)
+grad = np.zeros_like(x)
+print(grad)
+it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
 
-
-output = np.array(0)
-
-print(output)
-
-
+# while not it.finished:
+# 	print(it.multi_index)
+# 	it.iternext()

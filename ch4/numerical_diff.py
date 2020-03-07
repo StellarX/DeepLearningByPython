@@ -4,10 +4,6 @@
 import matplotlib.pylab as plt
 import numpy as np
 
-#4.3.1 用中心差分实现数值微分
-def numerical_diff(f, x):
-	h = 1e-4 #0.0001
-	return (f(x+h) - f(x-h)) / (2*h)
 
 
 #4.3.2 数值微分的例子
