@@ -1,25 +1,63 @@
-
-#本程序实现以下功能：（这个程序书上没有完整示例，自己简单写了一下）
-#
-#计算三层神经网络模型(手写数字识别)的精度（基于mini-batch）
-#计算交叉熵误差（基于mini-batch，且t为标签形式）
-#
-#mini-batch：简单来说就是：随机抽取小批量数据近似所有数据
-
 import sys, os
-sys.path.append(os.pardir)
+sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
 import numpy as np
-import pickle #保存了权重参数的文件
-from common.functions import sigmoid, softmax #导入softmax等函数
-# import common.functions as f
-from dataset.mnist import load_mnist
+import matplotlib.pyplot as plt
+import matplotlib.image as img
+from utils import mnist_reader
+import math
+# from sklearn import preprocessing 
 
-x = np.arange(0, 100, 10).reshape(2, 5)
-print(x.size)
-grad = np.zeros_like(x)
-print(grad)
-it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
+def calc_mean(n, m, img):
+	mean = []
+	for i in range(n):
+		sum = 0
+		for j in range(m):
+			sum += img[i][j]
+		mean.append(float(sum/784))
+	return mean
 
-# while not it.finished:
-# 	print(it.multi_index)
-# 	it.iternext()
+def calc_std(n, m, img, mean):
+	std = []
+	for i in range(n):
+		sum = 0
+		for j in range(m):
+			sum += (img[i][j] - mean[i])**2
+		std.append(math.sqrt(float(sum/784)))
+	return std
+
+def transfer_z_score(n, m, img, mean, std):
+	img_z_score = [None]*n
+	for i in range(len(img_z_score)): # 创建数组
+	    img_z_score[i] = [0]*m
+
+	for i in range(0, n):
+		img_z_score[i] = (img[i] - mean[i]) / std[i]
+	return img_z_score
+
+
+
+mnist_train = mnist_reader.load_mnist('./dataset2/fashion', kind='train') #kind ???
+mnist_test = mnist_reader.load_mnist('./dataset2/fashion', kind='t10k')
+
+labels_map2 = ['T恤', '裤子', '套衫', '连衣裙', '外套',
+               '凉鞋', '衬衫', '运动鞋', '背包', '短靴']
+labels_map = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
+               'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']  
+
+img, label = mnist_train
+img2, label2 = mnist_test
+img = np.array(img)
+img2 = np.array(img2)
+n, m = 60000, 784
+image = img
+
+plt.figure() # 创建画板
+for i in range(1,51):
+    plt.subplot(5,10,i)
+    plt.xlabel(labels_map[label[i-1]]) #绘制标签
+    
+    plt.imshow(image[i-1].reshape(28, 28)) #恢复图像的形状
+    plt.xticks([]) #去除坐标轴
+    plt.yticks([])
+plt.show()
+

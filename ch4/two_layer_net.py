@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
+sys.path.append(os.pardir)
 from common.functions import *
 from common.gradient import numerical_gradient
 
@@ -9,10 +9,10 @@ class TwoLayerNet:
 
     def __init__(self, input_size, hidden_size, output_size, weight_init_std=0.01):
 		# 从头开始依次表示输入层的神经元数、隐藏层的神经元数、输出层的神经元数
-        # 初始化权重
+        
         self.params = {} #保存神经网络参数的字典型变量
-        self.params['W1'] = weight_init_std * np.random.randn(input_size, hidden_size) #第一层的权重
-        self.params['b1'] = np.zeros(hidden_size) #第一层的偏置
+        self.params['W1'] = weight_init_std * np.random.randn(input_size, hidden_size) 
+        self.params['b1'] = np.zeros(hidden_size) #将偏置填充为0
         self.params['W2'] = weight_init_std * np.random.randn(hidden_size, output_size)
         self.params['b2'] = np.zeros(output_size)
 
@@ -39,16 +39,16 @@ class TwoLayerNet:
         y = np.argmax(y, axis=1)
         t = np.argmax(t, axis=1)
         
-        accuracy = np.sum(y == t) / float(x.shape[0])
+        accuracy = np.sum(y == t) / float(x.shape[0]) #
         return accuracy
         
-    # x:输入数据, t:监督数据
+    # 计算该网络的梯度
     def numerical_gradient(self, x, t):
         loss_W = lambda W: self.loss(x, t)
         
         grads = {} #保存梯度的字典型变量
-        grads['W1'] = numerical_gradient(loss_W, self.params['W1']) #第一层权重的梯度
-        grads['b1'] = numerical_gradient(loss_W, self.params['b1']) #第一层偏置的梯度
+        grads['W1'] = numerical_gradient(loss_W, self.params['W1']) 
+        grads['b1'] = numerical_gradient(loss_W, self.params['b1']) 
         grads['W2'] = numerical_gradient(loss_W, self.params['W2'])
         grads['b2'] = numerical_gradient(loss_W, self.params['b2'])
         

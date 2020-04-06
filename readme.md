@@ -14,13 +14,20 @@
 - gradient_2d.py: 绘制梯度的程序(4.4)
 - gradient_simplenet.py: 计算神经网络的梯度的程序(4.4.2)
 - two_layer_net.py: 创建一个二层神经网络的类(4.5.1) 
-- train_neuralnet.py: 进行二层网络的学习/训练(4.5.2)
+- train_neuralnet.py: 进行二层网络的学习/训练，并绘制识别精度变化图(4.5.2)
+
+## clothing_retrieve（服装检索代码）
+- image_show.py:读取数据集并显示图片
+- netbug1.py:爬虫
+- z_score_preprocessing.py:数据集预处理
 
 ## common
 - function.py: 基本函数模块
-- gradient.py:
+- gradient.py: 求梯度的几种函数
 
-## dataset: 包含训练和测试数据集
+## dataset: mnist数据集
+## dataset2: fashion-mnist数据集
+## utils:fashion-mnist:数据集的读取模块等。。。
 
 #### 注意
 - 所有网络的层数不包括输出层，即如果一个网络为：输入、隐藏层1、隐藏层2、输出，则该网络为3层网络，实际上输入层称为第0层

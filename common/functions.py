@@ -80,7 +80,7 @@ def cross_entropy_error_2(y, t):
     return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size
 
 def cross_entropy_error_1(y, t):
-    '''交叉熵误差：版本1：增加计算批量数据的误差
+    '''交叉熵误差：版本1：增加计算批量数据（mini-batch）的误差
     t为one-hot表示'''
     if y.ndim == 1:
         t = t.reshape(1, t.size)

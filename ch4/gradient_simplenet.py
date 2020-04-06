@@ -14,7 +14,7 @@ class simpleNet:
         self.W = np.random.randn(2,3) #用高斯分布进行初始化（随机设置权重参数）
 
     def predict(self, x):
-        '''这个网络很明显是一个2层网络'''
+        '''这个网络很明显是一个1层网络'''
         return np.dot(x, self.W)
 
     def loss(self, x, t):
