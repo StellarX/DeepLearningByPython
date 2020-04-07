@@ -16,6 +16,9 @@
 - two_layer_net.py: 创建一个二层神经网络的类(4.5.1) 
 - train_neuralnet.py: 进行二层网络的学习/训练，并绘制识别精度变化图(4.5.2)
 
+## ch5
+- AddLayerAndMulLayer.py: 加法层和乘法层的封装类（包含反向和正向传播）
+
 ## clothing_retrieve（服装检索代码）
 - image_show.py:读取数据集并显示图片
 - netbug1.py:爬虫
@@ -24,6 +27,7 @@
 ## common
 - function.py: 基本函数模块
 - gradient.py: 求梯度的几种函数
+- Layers.py: 将Relu、sigmoid的处理封装为类（层）；将加权和、加偏置封装为Affine层（类）；将softmax和交叉熵误差封装为SoftmaxWithLoss层（类）
 
 ## dataset: mnist数据集
 ## dataset2: fashion-mnist数据集
