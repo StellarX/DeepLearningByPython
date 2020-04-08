@@ -18,6 +18,9 @@
 
 ## ch5
 - AddLayerAndMulLayer.py: 加法层和乘法层的封装类（包含反向和正向传播）
+- TwoLayerNet.py: 使用了误差反向传播的二层网络模型，且每一层的运算函数都封装为了类
+- gradient_check.py: 使用数值梯度检查误差反向传播求出的梯度是否存在较大误差
+- train_net.py: 进行二层网络的学习，其中使用了误差反向传播法，且封装了各层处理，速度更快(怎么感觉也没快多少。。)
 
 ## clothing_retrieve（服装检索代码）
 - image_show.py:读取数据集并显示图片

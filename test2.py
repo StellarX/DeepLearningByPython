@@ -9,33 +9,15 @@ from PIL import Image
 import json
 
 from utils import mnist_reader
-mnist_train = mnist_reader.load_mnist('dataset2/fashion', kind='train') #return two arrays
-mnist_test = mnist_reader.load_mnist('dataset2/fashion', kind='t10k')
+(x_train, t_train), (x_test, t_test) = \
+    load_mnist(normalize=True, one_hot_label=True)
+batch_mask = np.random.choice(60000, 100)
 
-
-with open("1.txt", "r") as f_obj:
-	c = f_obj.read()
-
-dic = {
-	"jack":1,
-	"tom":2,
-	"mary":3
-}
-
-
-
-num = "json datas"
-with open("json.txt", "w") as f_obj:
-	json.dump(num, f_obj)
-
-with open("json.txt", "r") as f_obj:
-	r = json.load(f_obj)
-print(r)
-		
-
+x_batch = x_train[batch_mask]
+print(x_batch.shape)
 ###################################待记忆
 x = np.random.rand(2,3)
 # print(x)
 
-t = np.array([[1,4,7],[2,3,4]])
-t = t.T
+x = [3,5,67,3,5,3,9]
+print(x[:3])

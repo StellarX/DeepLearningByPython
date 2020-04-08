@@ -1,5 +1,7 @@
+import sys, os
+sys.path.append(os.pardir)
 import numpy as np
-from functions import *
+from common.functions import *
 # from common.util import im2col, col2im
 
 class Relu:
@@ -66,7 +68,7 @@ class SoftmaxWithLoss:
         self.y = softmax(x)
         self.loss = cross_entropy_error(self.y, self.t)
 
-        return self.loss
+        return self.loss #loss并没有传给前面的层，而是y，也就是softmax的输出（见75行）
 
     def backward(self, dout=1):
         batch_size = self.t.shape[0]
