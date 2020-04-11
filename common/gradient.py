@@ -36,8 +36,8 @@ def numerical_gradient(f, x):
     '''数值梯度：版本2 为了接收多维numpy数组而改进'''
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
+
     it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite']) #使用迭代器遍历
- 
     while not it.finished:
         idx = it.multi_index #取出当前的元素的索引
         tmp_val = x[idx]

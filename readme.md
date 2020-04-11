@@ -22,6 +22,10 @@
 - gradient_check.py: 使用数值梯度检查误差反向传播求出的梯度是否存在较大误差
 - train_net.py: 进行二层网络的学习，其中使用了误差反向传播法，且封装了各层处理，速度更快(怎么感觉也没快多少。。)
 
+## ch6
+- optimizer_compare_naive.py: 将4种参数更新方法SGD、Momentum、AdaGrad、Adam通过图像直观展示出来
+- optimizer_compare_mnist.py: 分别使用4种参数更新方法来进行手写数字识别，并使用图像展示学习的差异
+
 ## clothing_retrieve（服装检索代码）
 - image_show.py:读取数据集并显示图片
 - netbug1.py:爬虫

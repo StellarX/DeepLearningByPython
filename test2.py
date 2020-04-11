@@ -8,16 +8,28 @@ import matplotlib
 from PIL import Image
 import json
 
-from utils import mnist_reader
-(x_train, t_train), (x_test, t_test) = \
-    load_mnist(normalize=True, one_hot_label=True)
-batch_mask = np.random.choice(60000, 100)
 
-x_batch = x_train[batch_mask]
-print(x_batch.shape)
-###################################待记忆
-x = np.random.rand(2,3)
-# print(x)
 
-x = [3,5,67,3,5,3,9]
-print(x[:3])
+class Convolution:
+    def __init__(self, W, b, stride=1, pad=0):
+        self.W = W
+        self.b = b
+        self.stride = stride 
+        self.pad = pad 
+
+    def forward(self, x):
+        FN, C, FH, FW = self.W.shape 
+        N, C, H, W = x.shape
+        out_h = int(1 + (H + 2*self.pad - FH) / self.stride)
+        out_w = int(1 + (W + 2*self.pad - FW) / self.stride)
+
+        col = im2col(x, FH, FW, self.stride, self.pad)
+        col_W = self.W.reshape(FN, -1).T 
+        out = np.dot(col, col_W) + self.b
+
+        out = out.reshape(N, out_h, out_w, -1).transpose(0, 3, 1, 2)
+
+        return out
+
+
+
