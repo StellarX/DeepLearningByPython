@@ -49,23 +49,23 @@ img2, label2 = mnist_test
 img = np.array(img)
 img2 = np.array(img2)
 n, m = 60000, 784
-image = img
+images = img
 
-# print(img[0])
+print(images.shape)
 
 
 # 对mnist_train进行预处理
-mean = np.mean(image, axis=1) #计算均值
+mean = np.mean(images, axis=1) #计算均值
 # mean = calc_mean(n, m, img2)
-std = np.std(image, axis=1) #计算标准差
+std = np.std(images, axis=1) #计算标准差
 # std = calc_std(n, m, img2, mean)
-img_z_score = transfer_z_score(n, m, image, mean, std) #Z_score归一化
+img_z_score = transfer_z_score(n, m, images, mean, std) #Z_score归一化
 
 
 
 plt.figure() # 创建画板
-for i in range(1,51):
-    plt.subplot(5,10,i)
+for i in range(1,11):
+    plt.subplot(3,4,i)
     plt.xlabel(labels_map[label[i-1]]) #绘制标签
     
     plt.imshow(img_z_score[i-1].reshape(28, 28)) #恢复图像的形状

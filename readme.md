@@ -26,6 +26,10 @@
 - optimizer_compare_naive.py: 将4种参数更新方法SGD、Momentum、AdaGrad、Adam通过图像直观展示出来
 - optimizer_compare_mnist.py: 分别使用4种参数更新方法来进行手写数字识别，并使用图像展示学习的差异
 
+## ch7
+- simple_convnet.py：卷积神经网络实现，网络结构：conv - relu - pool - affine - relu - affine - softmax
+- train_convnet.py：卷积神经网络的训练
+
 ## clothing_retrieve（服装检索代码）
 - image_show.py:读取数据集并显示图片
 - netbug1.py:爬虫
